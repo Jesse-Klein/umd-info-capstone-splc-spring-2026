@@ -53,7 +53,6 @@
   .region-header-right{margin-left:auto;display:flex;gap:0.6rem;align-items:center;}
   .section-btn{font-family:var(--font-sub);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:0.45rem 1rem;border:1px solid var(--border);transition:background 0.15s,color 0.15s;white-space:nowrap;}
   .section-btn:hover{background:var(--gold);color:var(--black);}
-  .section-btn.placeholder{color:#444;border-color:#333;cursor:default;pointer-events:none;}
 
   /* FINDINGS */
   .findings-strip{padding:2.5rem 4rem 2rem;background:linear-gradient(135deg,#0d0d0d 0%,#1a1308 50%,#0d0d0d 100%);border-bottom:1px solid var(--border);}
@@ -167,7 +166,7 @@
       <p>All analyses are descriptive and informational in nature and do not involve partisan conclusions. Deliverables were submitted directly to SPLC as completed work products.</p>
     </div>
     <div class="about-block">
-      <p><strong>Section 103</strong> (Black Belt) studied Barbour, Bullock, Butler, Choctaw, Crenshaw, Dallas, Greene, Hale, Lowndes, Macon, Marengo, Montgomery, Perry, Pike, Russell, Sumter, and Wilcox counties across three presidential election cycles (2016, 2020, 2024).</p>
+      <p><strong>Section 103</strong> (Black Belt) studied Barbour, Bullock, Butler, Choctaw, Crenshaw, Dallas, Greene, Hale, Lowndes, Macon, Marengo, Montgomery, Perry, Pike, Russell, Sumter, and Wilcox counties across two presidential election cycles (2020, 2024).</p>
       <p><strong>Section 105</strong> (Gulf Coast) studied Baldwin, Clarke, Conecuh, Covington, Escambia, Mobile, Monroe, Washington, and surrounding counties&mdash;including coastal and inland communities with distinct demographic and civic infrastructure profiles.</p>
       <p>Teams shared a unified data infrastructure, methodology standards, and client relationship&mdash;gaining experience with the coordination demands of a real multi-team consulting engagement.</p>
     </div>
@@ -180,8 +179,8 @@
   <h2>Alabama Black Belt Counties</h2>
   <span class="region-meta">17 counties &middot; 11 teams</span>
   <div class="region-header-right">
-    <a class="section-btn placeholder">Section Report</a>
-    <a class="section-btn placeholder">Section Slides</a>
+    <a class="section-btn" href="bb-report.pdf" target="_blank">Section Report</a>
+    <a class="section-btn" href="bb-slides.pdf" target="_blank">Section Slides</a>
   </div>
 </div>
 
@@ -289,7 +288,7 @@
 <div class="teams-section">
   <div class="teams-grid">
     <div class="team-card"><div class="team-card-head"><div class="team-code">BB-DIG</div><div class="team-name">Regional Voting Data Integration &amp; Governance</div></div><div class="team-card-body"><p class="team-desc">Identified, collected, cleaned, and standardized public datasets on civic participation and voting access. Built shared data infrastructure, naming conventions, and geographic identifiers used by all Black Belt teams.</p></div></div>
-    <div class="team-card"><div class="team-card-head"><div class="team-code">BB-VOTE</div><div class="team-name">Voter Turnout &amp; Participation Trends</div></div><div class="team-card-body"><p class="team-desc">Analyzed voter turnout across three presidential election cycles (2016, 2020, 2024) in 17 Black Belt counties. Examined participation patterns by geography and demographic indicators; documented a 5.5pp turnout decline in key districts.</p></div></div>
+    <div class="team-card"><div class="team-card-head"><div class="team-code">BB-VOTE</div><div class="team-name">Voter Turnout &amp; Participation Trends</div></div><div class="team-card-body"><p class="team-desc">Analyzed voter turnout across two presidential election cycles (2020, 2024) in 17 Black Belt counties. Examined participation patterns by geography and demographic indicators; documented a 5.5pp turnout decline in key districts.</p></div></div>
     <div class="team-card"><div class="team-card-head"><div class="team-code">BB-PAD</div><div class="team-name">Polling Place Access &amp; Distance Analysis</div></div><div class="team-card-body"><p class="team-desc">Conducted distance-to-polling-place analysis using ArcGIS spatial methods. Mapped access patterns, documented closures and consolidations, and identified communities with the greatest geographic access burdens.</p></div></div>
     <div class="team-card"><div class="team-card-head"><div class="team-code">BB-TRAC</div><div class="team-name">Transportation Barriers to Civic Participation</div></div><div class="team-card-body"><p class="team-desc">Analyzed transportation infrastructure and vehicle access data across the Black Belt. Identified Dallas (15.1% car-free) and Bullock (zero fixed-route transit) as highest-priority targets for Election Day transportation intervention.</p></div></div>
     <div class="team-card"><div class="team-card-head"><div class="team-code">BB-AACS</div><div class="team-name">ADA Accessibility &amp; Compliance at Polling Locations</div></div><div class="team-card-body"><p class="team-desc">Audited all 49 active Montgomery County polling locations using the DOJ ADA checklist via Google Earth and Street View. Found only 27 of 49 with verifiable accessible entrances; 18 of 49 lacked passenger drop-off areas.</p></div></div>
@@ -308,8 +307,8 @@
   <h2>Alabama Gulf Coast Counties</h2>
   <span class="region-meta">Gulf Coast region &middot; 11 teams</span>
   <div class="region-header-right">
-    <a class="section-btn placeholder">Section Report</a>
-    <a class="section-btn placeholder">Section Slides</a>
+    <a class="section-btn" href="gc-report.pdf" target="_blank">Section Report</a>
+    <a class="section-btn" href="gc-slides.pdf" target="_blank">Section Slides</a>
   </div>
 </div>
 
@@ -376,41 +375,6 @@
       </div>
     </div>
 
-    <div class="deliv-card">
-      <div class="deliv-thumb"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#252018 100%);display:flex;align-items:center;justify-content:center;"><span style="font-family:'DM Sans',sans-serif;font-size:1.6rem;font-weight:700;color:rgba(201,168,76,0.2);letter-spacing:0.05em;">GC-VOTE</span></div></div>
-      <div class="deliv-card-body">
-        <div class="deliv-team-code">GC-VOTE</div>
-        <div class="deliv-title">Voter Turnout Analysis &amp; Visualizations</div>
-        <div class="deliv-desc">Turnout patterns across three presidential cycles for Gulf Coast counties. Includes Latinx community voter participation analysis across Mobile and coastal counties with demographic breakdowns.</div>
-        <div class="deliv-links">
-          <a class="deliv-btn" href="gc-vote-report.pdf">PDF Report</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="deliv-card">
-      <div class="deliv-thumb"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#252018 100%);display:flex;align-items:center;justify-content:center;"><span style="font-family:'DM Sans',sans-serif;font-size:1.6rem;font-weight:700;color:rgba(201,168,76,0.2);letter-spacing:0.05em;">GC-AACS</span></div></div>
-      <div class="deliv-card-body">
-        <div class="deliv-team-code">GC-AACS</div>
-        <div class="deliv-title">ADA Accessibility Assessment</div>
-        <div class="deliv-desc">Assessed ADA accessibility indicators at Gulf Coast polling locations, identifying patterns in physical access barriers. Categorized accessibility summaries and visual findings for SPLC planning use.</div>
-        <div class="deliv-links">
-          <a class="deliv-btn" href="gc-aacs-report.pdf">PDF Report</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="deliv-card">
-      <div class="deliv-thumb"><div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#252018 100%);display:flex;align-items:center;justify-content:center;"><span style="font-family:'DM Sans',sans-serif;font-size:1.6rem;font-weight:700;color:rgba(201,168,76,0.2);letter-spacing:0.05em;">GC-CPAD</span></div></div>
-      <div class="deliv-card-body">
-        <div class="deliv-team-code">GC-CPAD</div>
-        <div class="deliv-title">Civic Process Journey Maps &amp; Materials</div>
-        <div class="deliv-desc">Clear, nonpartisan informational materials for Gulf Coast community members. Journey maps, flowcharts, and public-facing design reflecting regional context and community literacy needs.</div>
-        <div class="deliv-links">
-          <a class="deliv-btn" href="gc-cpad-report.pdf">PDF Report</a>
-        </div>
-      </div>
-    </div>
 
   </div>
 </div>
