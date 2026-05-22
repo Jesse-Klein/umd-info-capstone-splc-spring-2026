@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ─────────────────────────────────────────────────────
+     CUSTOMIZE THESE FOUR VALUES, THEN UPLOAD THE PDF
+     ───────────────────────────────────────────────────── -->
+<title>Section 105 Final Slides — UMD iConsultancy × SPLC, Spring 2026</title>
+<script>
+  const PAGE_CONFIG = {
+    section:    "Section 105",               // "Section 105" or "Section 105"
+    region:     "Alabama Gulf Coast",        // "Alabama Gulf Coast" or "Alabama Gulf Coast"
+    docType:    "Final Slides",              // "Final Slides" or "Final Slides"
+    pdfFile:    "gc-slides.pdf",             // filename of the PDF in the same repo folder
+    backUrl:    "capstone-splc-2026.html",   // link back to the student-facing page
+  };
+</script>
+<!-- ───────────────────────────────────────────────────── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=DM+Sans:wght@400;600;700&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #1a1a1a;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --white: #f5f3ee;
+    --border: rgba(201,168,76,0.25);
+    --text-muted: #888;
+    --text-dim: #bbb;
+    --font-heading: 'PT Serif', serif;
+    --font-sub: 'DM Sans', sans-serif;
+    --font-body: 'Jost', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: #0d0d0d; color: var(--white);
+    font-family: var(--font-body); font-weight: 300;
+    display: flex; flex-direction: column;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: #0a0a0a;
+    border-bottom: 2px solid var(--gold);
+    padding: 0 3rem;
+    height: 52px;
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-shrink: 0;
+  }
+  .topbar-back {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .topbar-back:hover { color: var(--gold); }
+  .topbar-back::before { content: '← '; }
+  .topbar-sep { width: 1px; height: 18px; background: var(--border); }
+  .topbar-title {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .topbar-right {
+    margin-left: auto; display: flex; gap: 0.6rem;
+  }
+  .dl-btn {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--gold); color: var(--black);
+    padding: 0.35rem 1rem; text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .dl-btn:hover { background: var(--gold-light); }
+
+  /* ── DOC HEADER ── */
+  .doc-header {
+    background: #0d0d0d;
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 3rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    flex-shrink: 0;
+  }
+  .doc-tag {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--gold); color: var(--black);
+    padding: 0.3rem 0.75rem; flex-shrink: 0;
+  }
+  .doc-title {
+    font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--white);
+  }
+  .doc-meta {
+    margin-left: auto;
+    font-family: var(--font-body); font-size: 0.75rem; color: var(--text-muted);
+    text-align: right; line-height: 1.6;
+  }
+
+  /* ── PDF VIEWER ── */
+  .pdf-wrap {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    background: #1a1a1a;
+  }
+  .pdf-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  .pdf-fallback {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1rem; padding: 2rem; text-align: center;
+  }
+  .pdf-fallback p {
+    font-family: var(--font-body); font-size: 0.9rem; color: var(--text-dim);
+    line-height: 1.6; max-width: 480px;
+  }
+
+  /* ── NOTICE BAR ── */
+  .notice-bar {
+    background: #0a0a0a; border-top: 1px solid rgba(201,168,76,0.12);
+    padding: 0.9rem 3rem;
+    display: flex; gap: 1.5rem; align-items: center;
+    flex-shrink: 0;
+  }
+  .notice-logo img { height: 30px; width: auto; display: block; opacity: 0.8; }
+  .notice-divider { width: 1px; height: 28px; background: var(--border); flex-shrink: 0; }
+  .notice-tag {
+    font-family: var(--font-sub); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); flex-shrink: 0;
+  }
+  .notice-text {
+    font-family: var(--font-body); font-size: 0.75rem; color: #777; line-height: 1.5;
+  }
+  .notice-text strong { color: #aaa; font-family: var(--font-sub); }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" id="back-link" href="capstone-splc-2026.html">Project Overview</a>
+  <div class="topbar-sep"></div>
+  <span class="topbar-title" id="topbar-title">Loading...</span>
+  <div class="topbar-right">
+    <a class="dl-btn" id="dl-link" href="#" download>Download PDF</a>
+  </div>
+</nav>
+
+<div class="doc-header">
+  <span class="doc-tag" id="doc-tag">...</span>
+  <span class="doc-title" id="doc-title">Loading...</span>
+  <div class="doc-meta">
+    UMD iConsultancy &middot; Spring 2026<br>
+    In partnership with the Southern Poverty Law Center
+  </div>
+</div>
+
+<div class="pdf-wrap">
+  <iframe id="pdf-frame" title="Document viewer">
+    <div class="pdf-fallback">
+      <p>Your browser does not support inline PDF viewing.</p>
+    </div>
+  </iframe>
+</div>
+
+<div class="notice-bar">
+  <div class="notice-logo">
+    <img src="UMD_w_INFO_as_Tagline_-_Collor_PNG.png" alt="University of Maryland College of Information">
+  </div>
+  <div class="notice-divider"></div>
+  <span class="notice-tag">Notice</span>
+  <span class="notice-text">
+    <strong>All analyses are descriptive and informational. No partisan conclusions are drawn or implied.</strong>
+    Produced as part of an advanced capstone course at the University of Maryland College of Information. Findings should be treated as a starting point for further investigation.
+  </span>
+</div>
+
+<script>
+  // Apply config to page
+  const c = PAGE_CONFIG;
+  document.title = `${c.section} ${c.docType} — UMD iConsultancy × SPLC, Spring 2026`;
+  document.getElementById('topbar-title').textContent = `${c.section} · ${c.docType}`;
+  document.getElementById('doc-tag').textContent = c.section;
+  document.getElementById('doc-title').textContent = `${c.region} — ${c.docType}`;
+  document.getElementById('back-link').href = c.backUrl;
+  document.getElementById('dl-link').href = c.pdfFile;
+  document.getElementById('pdf-frame').src = c.pdfFile;
+</script>
+
+</body>
+</html>
