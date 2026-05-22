@@ -84,9 +84,7 @@
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
   }
-  .hero-meta-item {
-    display: flex; flex-direction: column; gap: 0.15rem;
-  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
   .hero-meta-label {
     font-family: var(--font-sub); font-size: 0.58rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
@@ -94,6 +92,31 @@
   .hero-meta-value {
     font-family: var(--font-body); font-size: 0.85rem; color: var(--white); font-weight: 400;
   }
+
+  /* ── RESUME BANNER ── */
+  .resume-banner {
+    background: rgba(201,168,76,0.07);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 4rem;
+    display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;
+  }
+  .resume-banner-label {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap; padding-top: 0.1rem;
+  }
+  .resume-banner-content { display: flex; flex-direction: column; gap: 0.85rem; }
+  .resume-item { }
+  .resume-item-label {
+    font-family: var(--font-sub); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+  .resume-item-text {
+    font-family: var(--font-body); font-size: 0.82rem; color: var(--text-dim); line-height: 1.6;
+  }
+  .resume-item-text em { color: var(--white); font-style: normal; }
 
   /* ── ABOUT SECTION ── */
   .about-section {
@@ -115,11 +138,48 @@
   .about-block p:last-child { margin-bottom: 0; }
   .about-block p strong { color: var(--white); font-weight: 600; }
 
+  /* ── REGION HEADER ── */
+  .region-header {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1.5rem 4rem;
+    background: var(--section-bg);
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .region-tag {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--gold); color: var(--black);
+    padding: 0.3rem 0.75rem; flex-shrink: 0;
+  }
+  .region-header h2 {
+    font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--white);
+  }
+  .region-header .region-meta {
+    font-family: var(--font-body); font-size: 0.8rem; color: var(--text-muted);
+  }
+  .region-header-right {
+    margin-left: auto; display: flex; gap: 0.6rem; align-items: center;
+  }
+  .section-btn {
+    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    padding: 0.45rem 1rem; border: 1px solid var(--border);
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .section-btn:hover { background: var(--gold); color: var(--black); }
+  .section-btn.placeholder {
+    color: #444; border-color: #333; cursor: default; pointer-events: none;
+  }
+
   /* ── FINDINGS STRIP ── */
   .findings-strip {
-    padding: 2.5rem 4rem;
+    padding: 2.5rem 4rem 2rem;
     background: linear-gradient(135deg, #0d0d0d 0%, #1a1308 50%, #0d0d0d 100%);
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   .findings-row {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
@@ -145,42 +205,71 @@
     color: #999; line-height: 1.55;
   }
 
-  /* ── REGION HEADER with section buttons ── */
-  .region-header {
-    display: flex; align-items: center; gap: 1.25rem;
-    padding: 1.5rem 4rem;
-    background: var(--section-bg);
-    border-top: 2px solid var(--gold);
+  /* ── DELIVERABLES GALLERY ── */
+  .deliverables-section {
+    padding: 2rem 4rem 2.5rem;
+    background: #131313;
     border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
   }
-  .region-tag {
-    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    background: var(--gold); color: var(--black);
-    padding: 0.3rem 0.75rem; flex-shrink: 0;
+  .deliverables-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    margin-top: 1.25rem;
   }
-  .region-header h2 {
-    font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--white);
+  .deliv-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s;
   }
-  .region-header .region-meta {
-    font-family: var(--font-body);
-    font-size: 0.8rem; color: var(--text-muted);
+  .deliv-card:hover { border-color: var(--gold); }
+  .deliv-thumb {
+    width: 100%; aspect-ratio: 16/10; overflow: hidden;
+    background: #252525;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    position: relative;
   }
-  .region-header-right {
-    margin-left: auto; display: flex; gap: 0.6rem; align-items: center;
+  .deliv-thumb-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #252018 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
   }
-  .section-btn {
-    font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
+  .deliv-thumb-icon {
+    font-family: var(--font-sub); font-size: 1.6rem; font-weight: 700;
+    color: rgba(201,168,76,0.2); letter-spacing: 0.05em;
+  }
+  .deliv-card-body {
+    padding: 0.85rem 1rem 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .deliv-team-code {
+    font-family: var(--font-sub); font-size: 0.55rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+  }
+  .deliv-title {
+    font-family: var(--font-sub); font-size: 0.8rem; font-weight: 700;
+    color: var(--white); line-height: 1.3;
+  }
+  .deliv-desc {
+    font-family: var(--font-body); font-size: 0.72rem; color: #999; line-height: 1.5;
+    flex: 1;
+  }
+  .deliv-links {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 0.5rem;
+    border-top: 1px solid rgba(201,168,76,0.08); margin-top: auto;
+  }
+  .deliv-btn {
+    font-family: var(--font-sub); font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
     color: var(--gold); text-decoration: none;
-    padding: 0.45rem 1rem; border: 1px solid var(--border);
     transition: background 0.15s, color 0.15s;
-    white-space: nowrap;
+    display: inline-block;
   }
-  .section-btn:hover { background: var(--gold); color: var(--black); }
-  .section-btn.placeholder {
-    color: #444; border-color: #333; cursor: default; pointer-events: none;
+  .deliv-btn:hover { background: var(--gold); color: var(--black); }
+  .deliv-btn.live {
+    background: rgba(201,168,76,0.1); border-color: var(--gold);
   }
 
   /* ── TEAM CARDS ── */
@@ -271,7 +360,7 @@
   .foot-text a { color: var(--text-muted); text-decoration: none; }
   .foot-text a:hover { color: var(--gold); }
 
-  /* ── NOTICE BAR with logo ── */
+  /* ── NOTICE BAR ── */
   .notice-bar {
     background: #0a0a0a; border-top: 1px solid rgba(201,168,76,0.12);
     padding: 1.25rem 4rem;
@@ -279,9 +368,7 @@
   }
   .notice-logo { flex-shrink: 0; }
   .notice-logo img { height: 36px; width: auto; display: block; opacity: 0.85; }
-  .notice-divider {
-    width: 1px; height: 36px; background: var(--border); flex-shrink: 0;
-  }
+  .notice-divider { width: 1px; height: 36px; background: var(--border); flex-shrink: 0; }
   .notice-tag {
     font-family: var(--font-sub); font-size: 0.62rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
@@ -293,20 +380,24 @@
   .notice-text strong { color: var(--text-dim); font-family: var(--font-sub); }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .deliverables-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   @media (max-width: 900px) {
     .topnav, .hero, .about-section, .teams-section, .region-header,
-    .findings-strip, .cta-section, footer, .notice-bar {
-      padding-left: 1.5rem; padding-right: 1.5rem;
-    }
+    .findings-strip, .deliverables-section, .cta-section, footer, .notice-bar,
+    .resume-banner { padding-left: 1.5rem; padding-right: 1.5rem; }
     .about-grid, .findings-row { grid-template-columns: 1fr; }
+    .deliverables-grid { grid-template-columns: repeat(2, 1fr); }
     .teams-grid { grid-template-columns: repeat(2, 1fr); }
     .cta-section { grid-template-columns: 1fr; }
     .hero-title { font-size: 1.8rem; }
     .topnav-links { display: none; }
     .region-header-right { width: 100%; margin-left: 0; }
+    .resume-banner { grid-template-columns: 1fr; gap: 1rem; }
   }
   @media (max-width: 600px) {
-    .teams-grid { grid-template-columns: 1fr; }
+    .teams-grid, .deliverables-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -318,6 +409,7 @@
   <div class="topnav-sep"></div>
   <div class="topnav-links">
     <a href="#about">About</a>
+    <a href="#resume">For Your Resume</a>
     <a href="#bb-teams">Black Belt Teams</a>
     <a href="#gc-teams">Gulf Coast Teams</a>
     <a href="#iconsultancy">iConsultancy</a>
@@ -352,10 +444,6 @@
       <span class="hero-meta-label">Counties Studied</span>
       <span class="hero-meta-value">24 across Black Belt &amp; Gulf Coast</span>
     </div>
-    <div class="hero-meta-item">
-      <span class="hero-meta-label">Full Project Site</span>
-      <span class="hero-meta-value"><a href="index.html" style="color:var(--gold);text-decoration:none;">View Complete Deliverables &rarr;</a></span>
-    </div>
   </div>
 </header>
 
@@ -365,10 +453,10 @@
   <div class="about-grid">
     <div class="about-block">
       <p>
-        This capstone was a structural departure from typical iConsultancy projects. Rather than assigning each section to a different client, all 22 teams across both sections of INST490 collaborated on a single large-scale project for one client: the <strong>Southern Poverty Law Center's Alabama Office</strong>, supporting their Data &amp; Research, Democracy–Voting Rights Litigation, and Policy teams.
+        This capstone was a structural departure from typical iConsultancy projects. Rather than assigning each section to a different client, all 22 teams across both sections of INST490 collaborated on a single large-scale project for one client: the <strong>Southern Poverty Law Center's Alabama Office</strong>, supporting their Data &amp; Research, Democracy&ndash;Voting Rights Litigation, and Policy teams.
       </p>
       <p>
-        Each team tackled a distinct analytical dimension — from voter turnout and transportation barriers to ADA accessibility, broadband access, and civic education materials — producing a coordinated suite of research findings, datasets, visualizations, and design deliverables.
+        Each team tackled a distinct analytical dimension &mdash; from voter turnout and transportation barriers to ADA accessibility, broadband access, and civic education materials &mdash; producing a coordinated suite of research findings, datasets, visualizations, and design deliverables.
       </p>
       <p>
         All analyses are descriptive and informational in nature and do not involve partisan conclusions. Deliverables were submitted directly to SPLC as completed work products.
@@ -379,48 +467,172 @@
         <strong>Section 103</strong> (Black Belt) studied Barbour, Bullock, Butler, Choctaw, Crenshaw, Dallas, Greene, Hale, Lowndes, Macon, Marengo, Montgomery, Perry, Pike, Russell, Sumter, and Wilcox counties across three presidential election cycles (2016, 2020, 2024).
       </p>
       <p>
-        <strong>Section 105</strong> (Gulf Coast) studied Baldwin, Clarke, Conecuh, Covington, Escambia, Mobile, Monroe, Washington, and surrounding counties — including coastal and inland communities with distinct demographic and civic infrastructure profiles.
+        <strong>Section 105</strong> (Gulf Coast) studied Baldwin, Clarke, Conecuh, Covington, Escambia, Mobile, Monroe, Washington, and surrounding counties &mdash; including coastal and inland communities with distinct demographic and civic infrastructure profiles.
       </p>
       <p>
-        Teams shared a unified data infrastructure, methodology standards, and client relationship — gaining experience with the coordination demands of a real multi-team consulting engagement.
+        Teams shared a unified data infrastructure, methodology standards, and client relationship &mdash; gaining experience with the coordination demands of a real multi-team consulting engagement.
       </p>
     </div>
   </div>
 </section>
 
-<!-- FINDINGS STRIP -->
-<section class="findings-strip">
-  <div class="section-label">Select Project Findings</div>
-  <div class="findings-row">
-    <div class="finding-card">
-      <div class="f-num">01</div>
-      <div class="f-head">~23,000 fewer ballots cast, 2020&ndash;2024</div>
-      <div class="f-body">Black participation declined in 21 of 24 study counties. The white-Black participation gap reached a 16-year statewide high.</div>
+<!-- RESUME GUIDANCE -->
+<section class="resume-banner" id="resume">
+  <div class="resume-banner-label">For Your<br>Resume</div>
+  <div class="resume-banner-content">
+    <div class="resume-item">
+      <div class="resume-item-label">One-liner</div>
+      <div class="resume-item-text"><em>UMD iConsultancy Capstone &mdash; Voting &amp; Civic Participation in Alabama (SPLC), Spring 2026</em></div>
     </div>
-    <div class="finding-card">
-      <div class="f-num">02</div>
-      <div class="f-head">93% vote on a single Election Day &mdash; no early voting in Alabama</div>
-      <div class="f-body">Every transportation, accessibility, and distance barrier becomes acute. Five of six lowest-income counties have no fixed-route transit.</div>
-    </div>
-    <div class="finding-card">
-      <div class="f-num">03</div>
-      <div class="f-head">Gulf Coast: 106+ polling sites classified by accessibility tier</div>
-      <div class="f-body">Drive-time and demographic analysis across Mobile and Baldwin counties identified communities with compounded access burdens across transit availability, road conditions, and ADA compliance.</div>
+    <div class="resume-item">
+      <div class="resume-item-label">Short paragraph (adapt to your team)</div>
+      <div class="resume-item-text">As part of a 22-team consulting capstone at the University of Maryland College of Information, I contributed to <em>[describe your team's focus]</em> for the Southern Poverty Law Center's Alabama office. The project analyzed civic participation and voter access across two Alabama regions using publicly available data. Final deliverables were submitted to SPLC's Data &amp; Research, Voting Rights Litigation, and Policy teams.</div>
     </div>
   </div>
 </section>
 
-<!-- BLACK BELT TEAMS -->
+<!-- ═══════════════════════════════════════════════════════════════
+     BLACK BELT SECTION
+════════════════════════════════════════════════════════════════ -->
+
+<!-- BLACK BELT HEADER -->
 <div class="region-header" id="bb-teams">
   <span class="region-tag">Section 103</span>
   <h2>Alabama Black Belt Counties</h2>
   <span class="region-meta">17 counties &middot; 11 teams</span>
   <div class="region-header-right">
-    <a class="section-btn" href="bb-report.html">Section Report</a>
-    <a class="section-btn" href="bb-slides.html">Section Slides</a>
+    <a class="section-btn placeholder" href="#">Section Report</a>
+    <a class="section-btn placeholder" href="#">Section Slides</a>
   </div>
 </div>
 
+<!-- BLACK BELT FINDINGS -->
+<div class="findings-strip">
+  <div class="section-label">Top Findings &mdash; Black Belt Section</div>
+  <div class="findings-row">
+    <div class="finding-card">
+      <div class="f-num">01</div>
+      <div class="f-head">~23,000 fewer ballots cast, 2020&ndash;2024</div>
+      <div class="f-body">Black participation declined in 16 of 17 Black Belt counties between the 2020 and 2024 presidential elections. The white&ndash;Black participation gap reached a 16-year statewide high in 2024.</div>
+    </div>
+    <div class="finding-card">
+      <div class="f-num">02</div>
+      <div class="f-head">93% vote on a single Election Day &mdash; no early voting in Alabama</div>
+      <div class="f-body">Every transportation, accessibility, and distance barrier becomes acute on one day. Dallas County has the highest car-free household rate (15.1%); Bullock County has zero fixed-route transit. Five of the six lowest-income Black Belt counties have no public transit.</div>
+    </div>
+    <div class="finding-card">
+      <div class="f-num">03</div>
+      <div class="f-head">27 of 49 Montgomery polling sites have verifiable accessible entrances</div>
+      <div class="f-body">An ADA audit of all active Montgomery County polling locations found 18 of 49 lack passenger drop-off areas and roughly half lack confirmed accessible parking. For voters relying on the ADA, Election Day options narrow sharply.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BLACK BELT DELIVERABLES GALLERY -->
+<div class="deliverables-section">
+  <div class="section-label">Select Deliverables &mdash; Black Belt Section</div>
+  <div class="deliverables-grid">
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-VOTE</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-VOTE</div>
+        <div class="deliv-title">Voter Turnout Analysis &amp; Visualizations</div>
+        <div class="deliv-desc">Turnout trends across three presidential cycles (2016&ndash;2024) in 17 Black Belt counties, with demographic breakdowns and participation gap analysis.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-vote-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-PAD</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-PAD</div>
+        <div class="deliv-title">Polling Place Access &amp; Distance Maps</div>
+        <div class="deliv-desc">ArcGIS-based distance-to-poll analysis for Black Belt communities. Maps identify closures, consolidations, and areas with compounded geographic access burdens.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-pad-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-TRAC</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-TRAC</div>
+        <div class="deliv-title">Transportation Barriers Assessment</div>
+        <div class="deliv-desc">Vehicle access and transit infrastructure analysis across 17 counties. Identifies Dallas and Bullock as highest-priority targets for Election Day transportation intervention.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-trac-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-AACS</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-AACS</div>
+        <div class="deliv-title">ADA Accessibility Audit &amp; Summary</div>
+        <div class="deliv-desc">DOJ ADA checklist audit of all 49 active Montgomery County polling locations via Google Earth and Street View. Categorized accessibility indicators and visual findings.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-aacs-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-CPRI</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-CPRI</div>
+        <div class="deliv-title">Composite Civic Participation Risk Index</div>
+        <div class="deliv-desc">Composite index synthesizing turnout, transportation, ADA, broadband, and demographic indicators. County-level access risk rankings with transparent weighting documentation.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-cpri-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">BB-CPAD</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">BB-CPAD</div>
+        <div class="deliv-title">Civic Process Journey Maps &amp; Materials</div>
+        <div class="deliv-desc">Public-facing informational materials, journey maps, and flowcharts explaining civic participation processes for Black Belt community members. Nonpartisan, accessible design.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="bb-cpad-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLACK BELT TEAM CARDS -->
 <div class="teams-section">
   <div class="teams-grid">
 
@@ -490,7 +702,7 @@
         <div class="team-name">Composite Civic Participation Risk Index</div>
       </div>
       <div class="team-card-body">
-        <p class="team-desc">Developed and documented a composite index synthesizing indicators from all Black Belt teams — turnout, transportation, ADA, broadband, and demographics. Ranked counties by access risk with transparent weighting documentation.</p>
+        <p class="team-desc">Developed and documented a composite index synthesizing indicators from all Black Belt teams &mdash; turnout, transportation, ADA, broadband, and demographics. Ranked counties by access risk with transparent weighting documentation.</p>
       </div>
     </div>
 
@@ -500,7 +712,7 @@
         <div class="team-name">Data Visualization &amp; Dashboard Design</div>
       </div>
       <div class="team-card-body">
-        <p class="team-desc">Designed data visualizations and dashboards for civic participation data. Established a visual design style guide for SPLC reuse — covering typography, color palettes, chart selection, and accessibility standards.</p>
+        <p class="team-desc">Designed data visualizations and dashboards for civic participation data. Established a visual design style guide for SPLC reuse &mdash; covering typography, color palettes, chart selection, and accessibility standards.</p>
       </div>
     </div>
 
@@ -537,17 +749,148 @@
   </div>
 </div>
 
-<!-- GULF COAST TEAMS -->
+<!-- ═══════════════════════════════════════════════════════════════
+     GULF COAST SECTION
+════════════════════════════════════════════════════════════════ -->
+
+<!-- GULF COAST HEADER -->
 <div class="region-header" id="gc-teams">
   <span class="region-tag">Section 105</span>
   <h2>Alabama Gulf Coast Counties</h2>
   <span class="region-meta">Gulf Coast region &middot; 11 teams</span>
   <div class="region-header-right">
-    <a class="section-btn" href="gc-report.html">Section Report</a>
-    <a class="section-btn" href="gc-slides.html">Section Slides</a>
+    <a class="section-btn placeholder" href="#">Section Report</a>
+    <a class="section-btn placeholder" href="#">Section Slides</a>
   </div>
 </div>
 
+<!-- GULF COAST FINDINGS -->
+<div class="findings-strip">
+  <div class="section-label">Top Findings &mdash; Gulf Coast Section</div>
+  <div class="findings-row">
+    <div class="finding-card">
+      <div class="f-num">01</div>
+      <div class="f-head">Conecuh: 100. Baldwin: lowest. The spread tells SPLC where to start.</div>
+      <div class="f-body">The composite risk index ranked all seven Gulf Coast study counties. Clarke scored 95.4; Monroe 86.5. Conecuh tops the index because barriers stack across every measured dimension. Index weights are adjustable and documented for SPLC's use.</div>
+    </div>
+    <div class="finding-card">
+      <div class="f-num">02</div>
+      <div class="f-head">106+ Gulf Coast polling sites classified by accessibility tier</div>
+      <div class="f-body">Drive-time and demographic analysis across Mobile and Baldwin counties identified communities with compounded access burdens across transit availability, road conditions, and ADA compliance indicators. Several sites had no bus service on Election Day.</div>
+    </div>
+    <div class="finding-card">
+      <div class="f-num">03</div>
+      <div class="f-head">Latinx civic participation patterns distinct from Black Belt region</div>
+      <div class="f-body">Gulf Coast voter analysis documented distinct Latinx participation patterns across Mobile and coastal counties. Turnout and registration trends diverge from Black Belt patterns, with language access and information barriers playing a larger role.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GULF COAST DELIVERABLES GALLERY -->
+<div class="deliverables-section">
+  <div class="section-label">Select Deliverables &mdash; Gulf Coast Section</div>
+  <div class="deliverables-grid">
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-CPRI</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-CPRI</div>
+        <div class="deliv-title">Civic Participation Risk Explorer</div>
+        <div class="deliv-desc">Adjustable-weight composite risk index covering 7 Gulf Coast counties. Transparent documentation of indicator construction, weighting logic, and data gap handling.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-cpri-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-PAD</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-PAD</div>
+        <div class="deliv-title">Polling Place Access StoryMap</div>
+        <div class="deliv-desc">Tract-level drive-time and demographic analysis across Mobile and Baldwin counties. ArcGIS StoryMap illustrating access disparities and compounded distance burdens.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-pad-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-TRAC</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-TRAC</div>
+        <div class="deliv-title">Transit &amp; Transportation Barrier Maps</div>
+        <div class="deliv-desc">Public transportation analysis across 106+ Gulf Coast polling locations. Bus route coverage, no-vehicle rates, and accessibility tier classifications for Mobile and Baldwin counties.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-trac-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-CPAD</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-CPAD</div>
+        <div class="deliv-title">Civic Process Journey Maps &amp; Materials</div>
+        <div class="deliv-desc">Clear, nonpartisan informational materials for Gulf Coast community members. Journey maps, flowcharts, and public-facing design reflecting regional context and community literacy needs.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-cpad-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-VOTE</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-VOTE</div>
+        <div class="deliv-title">Voter Turnout Analysis &amp; Visualizations</div>
+        <div class="deliv-desc">Turnout patterns across three presidential cycles for Gulf Coast counties. Includes Latinx community voter participation analysis across Mobile and coastal counties.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-vote-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliv-card">
+      <div class="deliv-thumb">
+        <div class="deliv-thumb-inner">
+          <div class="deliv-thumb-icon">GC-BAND</div>
+        </div>
+      </div>
+      <div class="deliv-card-body">
+        <div class="deliv-team-code">GC-BAND</div>
+        <div class="deliv-title">Digital Access Profile &amp; Broadband Maps</div>
+        <div class="deliv-desc">Broadband availability and adoption analysis across Gulf Coast counties. Maps digital access patterns and identifies community anchor institutions as alternative access points.</div>
+        <div class="deliv-links">
+          <a class="deliv-btn" href="gc-band-report.pdf">PDF Report</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GULF COAST TEAM CARDS -->
 <div class="teams-section alt">
   <div class="teams-grid">
 
@@ -557,7 +900,7 @@
         <div class="team-name">Regional Voting Data Integration &amp; Governance</div>
       </div>
       <div class="team-card-body">
-        <p class="team-desc">Built the shared data foundation for Gulf Coast analysis — collecting, cleaning, and standardizing public datasets on civic participation and voting access across Mobile, Baldwin, and surrounding counties.</p>
+        <p class="team-desc">Built the shared data foundation for Gulf Coast analysis &mdash; collecting, cleaning, and standardizing public datasets on civic participation and voting access across Mobile, Baldwin, and surrounding counties.</p>
       </div>
     </div>
 
@@ -567,7 +910,7 @@
         <div class="team-name">Voter Turnout &amp; Participation Trends</div>
       </div>
       <div class="team-card-body">
-        <p class="team-desc">Analyzed turnout patterns across the Gulf Coast region for three presidential election cycles, examining participation by geography and demographic indicators — including Latinx community voter patterns across Mobile and coastal counties.</p>
+        <p class="team-desc">Analyzed turnout patterns across the Gulf Coast region for three presidential election cycles, examining participation by geography and demographic indicators &mdash; including Latinx community voter patterns across Mobile and coastal counties.</p>
       </div>
     </div>
 
@@ -670,13 +1013,12 @@
     <div class="cta-eyebrow">UMD College of Information &middot; iConsultancy Program</div>
     <h2 class="cta-title">Interested in engaging our students<br>as a capstone client?</h2>
     <p class="cta-body">
-      The iConsultancy program connects real organizations with senior Information Science students at the University of Maryland. Teams tackle authentic problems in data analysis, user research, systems design, policy translation, and information access — producing deliverables that clients actually use. If you're viewing this work and want to enrich our students as they move into their careers, we'd love to hear from you.
+      The iConsultancy program connects real organizations with senior Information Science students at the University of Maryland. Teams tackle authentic problems in data analysis, user research, systems design, policy translation, and information access &mdash; producing deliverables that clients actually use. If you're viewing this work and want to enrich our students as they move into their careers, we'd love to hear from you.
     </p>
   </div>
   <div class="cta-links">
     <a class="cta-btn primary" href="https://ischool.umd.edu/partners/iconsultancy/" target="_blank">Learn About iConsultancy</a>
     <a class="cta-btn secondary" href="mailto:iconsultancy@umd.edu">iconsultancy@umd.edu</a>
-    <a class="cta-btn secondary" href="index.html">View Full Project Site</a>
   </div>
 </section>
 
@@ -706,14 +1048,13 @@
   <div class="foot-col">
     <span class="foot-label">Links</span>
     <span class="foot-text">
-      <a href="index.html">Full Project Deliverables Site</a><br>
       <a href="https://ischool.umd.edu/partners/iconsultancy/" target="_blank">iConsultancy Program</a><br>
       <a href="mailto:iconsultancy@umd.edu">iconsultancy@umd.edu</a>
     </span>
   </div>
 </footer>
 
-<!-- NOTICE BAR with logo -->
+<!-- NOTICE BAR -->
 <div class="notice-bar">
   <div class="notice-logo">
     <img src="UMD_w_INFO_as_Tagline_-_Collor_PNG.png" alt="University of Maryland College of Information">
